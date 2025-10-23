@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>謎解き 南京錠</title>
+  <link rel="stylesheet" href="./nazotoki.css">
+</head>
+<body>
+  <div id="mannaka">
+    <h1>南京錠を開けよう</h1>
+    <div class="lock" id="lock">
+      <div class="shackle"></div>
+    </div>
+    <input type="text" id="code" autocomplete="off" maxlength="1" placeholder="0">
+    <input type="text" id="code2" autocomplete="off" maxlength="1" placeholder="0">
+    <input type="text" id="code3" autocomplete="off" maxlength="1" placeholder="0">
+    <input type="text" id="code4" autocomplete="off" maxlength="1" placeholder="0">
+    <br>
+    <button onclick="checkCode()">開ける</button>
+    <div class="display" id="message"></div>
+  </div>
+</body>
+  <script>
+    const correctCode = "1234";
+    function checkCode() {
+      const input = document.getElementById("code").value;
+      const input2 = document.getElementById("code2").value;
+      const input3 = document.getElementById("code3").value;
+      const input4 = document.getElementById("code4").value;
+      const lock = document.getElementById("lock");
+      const message = document.getElementById("message");
+      message.style.opacity=0;
+      if (input === correctCode[0]&&input2 === correctCode[1]&&input3 === correctCode[2]&&input4 === correctCode[3]) {
+        lock.classList.add("open");
+        message.style.opacity=1;
+        message.textContent = "✔️ クリア！";
+        message.style.color = "green";
+        setTimeout(()=> {
+          message.style.opacity=0;
+        },500);
+      } else {
+        lock.classList.remove("open");
+        message.style.opacity=1;
+        message.textContent = "× 間違っています";
+        message.style.color = "red";
+        setTimeout(()=> {
+          message.style.opacity=0;
+        },500);
+      }
+    }
+  </script>
+</html>
