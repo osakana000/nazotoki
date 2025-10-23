@@ -1,0 +1,86 @@
+body{
+  font-family: sans-serif;/*フォント*/
+  text-align: center;
+  background: #F0F0F0;
+  background-size: 20px 20px;
+  background-image:
+  radial-gradient(#bcbcbc62 1px, transparent 1px);
+  margin-top: 50px;
+  font-family: "senobi";
+}
+@font-face{
+  font-family: "senobi";
+  src: url(./font/Senobi-Gothic-Regular.woff) format("woff");
+}
+#mannaka{
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.lock {
+  width: 100px;
+  height: 150px;
+  background: #444;
+  margin: 90px auto;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 10px #929292;
+}
+.shackle {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #444;
+  border-bottom: none;/*した線をなくす*/
+  border-radius: 30px 30px 0 0;/*角丸*/
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+}
+.open .shackle {
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+}
+.display {
+  font-size: 24px;
+  margin-top: 20px;
+}
+input {
+  position: relative;
+  bottom: 80px;
+  border: transparent;
+  /* border-color: rgb(58, 204, 227);
+  box-shadow: 0 0 5px rgba(58, 204, 227, 0.8); */
+  font-size: 20px;
+  width: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: "senobi";
+  z-index: 10;
+}
+input[type="text"]:focus{
+  outline: none;
+}
+button {
+  background-color: rgb(58, 204, 227);
+  border: transparent;
+  color: #F0F0F0;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 5px 15px;
+  transition: 0.3s;
+  font-family: "senobi";
+}
+button:hover{
+  filter: drop-shadow(0px 0px 4px rgb(58,204,227));
+}
+#message{
+  opacity: 0;
+  transition: 0.3s;
+}
