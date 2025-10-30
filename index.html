@@ -11,27 +11,34 @@
     <h1>南京錠を開けよう</h1>
     <div class="lock" id="lock">
       <div class="shackle"></div>
+      <div id="bangou">
+        <input type="text" id="code" autocomplete="off" maxlength="1" placeholder="0">
+        <input type="text" id="code2" autocomplete="off" maxlength="1" placeholder="0">
+        <input type="text" id="code3" autocomplete="off" maxlength="1" placeholder="0">
+        <input type="text" id="code4" autocomplete="off" maxlength="1" placeholder="0">
+        <input type="text" id="code5" autocomplete="off" maxlength="1" placeholder="0">
+        <input type="text" id="code6" autocomplete="off" maxlength="1" placeholder="0">
+      </div>
     </div>
-    <input type="text" id="code" autocomplete="off" maxlength="1" placeholder="0">
-    <input type="text" id="code2" autocomplete="off" maxlength="1" placeholder="0">
-    <input type="text" id="code3" autocomplete="off" maxlength="1" placeholder="0">
-    <input type="text" id="code4" autocomplete="off" maxlength="1" placeholder="0">
     <br>
     <button onclick="checkCode()">開ける</button>
     <div class="display" id="message"></div>
   </div>
 </body>
   <script>
-    const correctCode = "1234";
+    const correctCode = "252510";
     function checkCode() {
       const input = document.getElementById("code").value;
       const input2 = document.getElementById("code2").value;
       const input3 = document.getElementById("code3").value;
       const input4 = document.getElementById("code4").value;
+      const input5 = document.getElementById("code5").value;
+      const input6 = document.getElementById("code6").value;
       const lock = document.getElementById("lock");
       const message = document.getElementById("message");
       message.style.opacity=0;
-      if (input === correctCode[0]&&input2 === correctCode[1]&&input3 === correctCode[2]&&input4 === correctCode[3]) {
+      if (input === correctCode[0] && input2 === correctCode[1] && input3 === correctCode[2] && input4 === correctCode[3]
+       && input5 === correctCode[4] && input6 === correctCode[5]) {
         lock.classList.add("open");
         message.style.opacity=1;
         message.textContent = "✔️ クリア！";
